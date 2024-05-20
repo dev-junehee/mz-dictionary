@@ -66,51 +66,24 @@ class MainViewController: UIViewController {
     
     }
     
-    // 추천 검색어 랜덤 숫자 추출
-//    func randomNumber() {
-//        
-//        return []
-//    }
+    // 버튼 디자인 함수
+    func designButton(_ button: UIButton, titleText title: String) {
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.red, for: .highlighted)
+        button.titleLabel?.font = .systemFont(ofSize: 10, weight: .light)
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 4
+        button.layer.borderColor = UIColor.black.cgColor
+    }
     
-    // 추천 검색어 섹션 함수
+    // 추천 검색어 섹션 UI 구성
     func recommendButtonsSection() {
         let randomWords = Array(words.keys).shuffled()
-        
-        // 1번 추천
-        recommendButton1.setTitle(randomWords[0], for: .normal)
-        recommendButton1.setTitleColor(.black, for: .normal)
-        recommendButton1.setTitleColor(.red, for: .highlighted)
-        recommendButton1.titleLabel?.font = .systemFont(ofSize: 10, weight: .light)
-        recommendButton1.layer.borderWidth = 1
-        recommendButton1.layer.cornerRadius = 4
-        recommendButton1.layer.borderColor = UIColor.black.cgColor
-        
-        // 2번 추천
-        recommendButton2.setTitle(randomWords[1], for: .normal)
-        recommendButton2.setTitleColor(.black, for: .normal)
-        recommendButton2.setTitleColor(.red, for: .highlighted)
-        recommendButton2.titleLabel?.font = .systemFont(ofSize: 10, weight: .light)
-        recommendButton2.layer.borderWidth = 1
-        recommendButton2.layer.cornerRadius = 4
-        recommendButton2.layer.borderColor = UIColor.black.cgColor
-        
-        // 3번 추천
-        recommendButton3.setTitle(randomWords[2], for: .normal)
-        recommendButton3.setTitleColor(.black, for: .normal)
-        recommendButton3.setTitleColor(.red, for: .highlighted)
-        recommendButton3.titleLabel?.font = .systemFont(ofSize: 10, weight: .light)
-        recommendButton3.layer.borderWidth = 1
-        recommendButton3.layer.cornerRadius = 4
-        recommendButton3.layer.borderColor = UIColor.black.cgColor
-        
-        // 4번 추천
-        recommendButton4.setTitle(randomWords[3], for: .normal)
-        recommendButton4.setTitleColor(.black, for: .normal)
-        recommendButton4.setTitleColor(.red, for: .highlighted)
-        recommendButton4.titleLabel?.font = .systemFont(ofSize: 10, weight: .light)
-        recommendButton4.layer.borderWidth = 1
-        recommendButton4.layer.cornerRadius = 4
-        recommendButton4.layer.borderColor = UIColor.black.cgColor
+        designButton(recommendButton1, titleText: randomWords[0])
+        designButton(recommendButton2, titleText: randomWords[1])
+        designButton(recommendButton3, titleText: randomWords[2])
+        designButton(recommendButton4, titleText: randomWords[3])
     }
     
     // 검색 결과 섹션 함수
