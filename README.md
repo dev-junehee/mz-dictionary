@@ -41,7 +41,7 @@
 ### 메인 화면
 - **기본**: placeholder와 초기 메세지 출력
 
-<img width="400" src="https://github.com/dev-junehee/mz-dictionary/assets/116873887/d6d963b6-12ac-47ea-8643-8480863da015"" />
+<img width="400" src="https://github.com/dev-junehee/mz-dictionary/assets/116873887/d6d963b6-12ac-47ea-8643-8480863da015" />
 
 - **TextField 활성화 시**:
 
