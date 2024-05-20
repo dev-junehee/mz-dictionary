@@ -26,6 +26,7 @@
 		C4D9EE942BF8EE1C006886C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4D9EE962BF8EE1C006886C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4D9EE9D2BF8F485006886C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C4DFA4052BFAE69A00FE3A5C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +43,7 @@
 		C4D9EE7C2BF8EE1B006886C4 = {
 			isa = PBXGroup;
 			children = (
+				C4DFA4052BFAE69A00FE3A5C /* README.md */,
 				C4D9EE872BF8EE1B006886C4 /* daily-04-mz-dictionary */,
 				C4D9EE862BF8EE1B006886C4 /* Products */,
 			);

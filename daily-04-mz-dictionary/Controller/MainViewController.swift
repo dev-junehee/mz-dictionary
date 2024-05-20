@@ -112,7 +112,7 @@ class MainViewController: UIViewController {
         recommendButtonsSection()
     }
 
-    // 검색 버튼 핸들러
+    // 검색 버튼 핸들러 - 검색 & 키보드 내리기
     @IBAction func searchButtonClicked(_ sender: UIButton) {
         let searchText = searchTextField.text!
         
@@ -124,13 +124,14 @@ class MainViewController: UIViewController {
             resultText.text = message["error"]
         }
         
+        view.endEditing(true)
         searchTextField.text = ""
     }
     
-    // 검색창 텍스트 필드 핸들러 - 키보드 내리기 & 검색
+    // 텍스트 필드 핸들러 
     @IBAction func searchTextFieldClicked(_ sender: UITextField) {
         let searchText = searchTextField.text!
-        
+
         if (words[searchText] != nil) {
             searchValue.text = searchText
             resultText.text = words[searchText]
@@ -138,54 +139,29 @@ class MainViewController: UIViewController {
             searchValue.text = ""
             resultText.text = message["error"]
         }
-        
+
         searchTextField.text = ""
     }
     
-    // 추천 검색어 버튼 핸들러 (누르면 해당 단어 검색 & 추천 검색어 재설정)
-    @IBAction func recommendButton1Clicked(_ sender: UIButton) {
-        let recommentText = recommendButton1.titleLabel?.text!
+    
+    // 추천 신조어 버튼 클릭 핸들러 - 검색
+    @IBAction func recommendButtonClicked(_ sender: UIButton) {
+        let recommentText = sender.titleLabel?.text!
         
         if recommentText != nil {
             searchValue.text = recommentText
             resultText.text = words[recommentText!]
         }
+        
+        view.endEditing(true)
+        searchTextField.text = ""
         
         recommendButtonsSection()
     }
     
-    @IBAction func recommendButton2Clicked(_ sender: UIButton) {
-        let recommentText = recommendButton2.titleLabel?.text!
-        
-        if recommentText != nil {
-            searchValue.text = recommentText
-            resultText.text = words[recommentText!]
-        }
-        
-        recommendButtonsSection()
-    }
-    
-    @IBAction func recommendButton3Clicked(_ sender: UIButton) {
-        let recommentText = recommendButton3.titleLabel?.text!
-        
-        if recommentText != nil {
-            searchValue.text = recommentText
-            resultText.text = words[recommentText!]
-        }
-        
-        recommendButtonsSection()
-    }
-    
-    
-    @IBAction func recommendButton4Clicked(_ sender: UIButton) {
-        let recommentText = recommendButton4.titleLabel?.text!
-        
-        if recommentText != nil {
-            searchValue.text = recommentText
-            resultText.text = words[recommentText!]
-        }
-        
-        recommendButtonsSection()
+    // 키보드 내리기 (tap guesture)
+    @IBAction func keyboardDismiss(_ sender: Any) {
+        view.endEditing(true)
     }
     
 }
